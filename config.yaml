@@ -1,0 +1,102 @@
+# ==========================================
+# Directories
+# ==========================================
+
+videos_dir: "videos"
+
+output_dir: "dataset/images"
+
+metadata_file: "dataset/metadata.csv"
+
+log_file: "logs/extractor.log"
+
+# ==========================================
+# Extraction Mode
+# Available:
+#   random
+#   uniform
+#   interval
+# ==========================================
+
+mode: "random"
+
+# ==========================================
+# Random Mode
+# ==========================================
+
+frames_per_video: 300
+
+random_seed: 42
+
+# ==========================================
+# Interval Mode
+# Used only if mode == interval
+# ==========================================
+
+interval_seconds: 2.0
+
+# ==========================================
+# Image
+# ==========================================
+
+image_format: "jpg"
+
+image_quality: 95
+
+# ==========================================
+# Parallel Processing
+# Set to 0 to automatically use all CPU cores
+# ==========================================
+
+workers: 0
+
+# ==========================================
+# Frame Selection
+# Minimum time (seconds) between two extracted
+# frames when using random mode.
+# ==========================================
+
+min_time_between_frames: 1.5
+
+# ==========================================
+# Existing Files
+# ==========================================
+
+overwrite: false
+
+continue_numbering: true
+
+# ==========================================
+# Logging
+# ==========================================
+
+verbose: true
+
+save_logs: true
+
+# ==========================================
+# Metadata
+# ==========================================
+
+save_metadata: true
+
+metadata_columns:
+  - image
+  - video
+  - frame
+  - timestamp
+  - width
+  - height
+
+# ==========================================
+# Supported Video Extensions
+# ==========================================
+
+video_extensions:
+  - ".mp4"
+  - ".avi"
+  - ".mov"
+  - ".mkv"
+  - ".webm"
+  - ".mpg"
+  - ".mpeg"
