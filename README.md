@@ -53,6 +53,8 @@ frame-extractor/
 │   ├── core/
 │   │   ├── __init__.py
 │   │   ├── extractor.py
+│   │   ├── downloader.py
+│   │   ├── pipeline.py
 │   │   ├── scanner.py
 │   │   ├── numbering.py
 │   │   └── metadata.py
@@ -97,6 +99,18 @@ or
 pip install -e .
 ```
 
+---
+
+## System Dependencies
+
+This project requires FFmpeg for video processing.
+
+### Ubuntu / WSL
+
+```bash
+sudo apt update
+sudo apt install ffmpeg
+```
 ---
 
 # 🎥 Supported Video Formats
