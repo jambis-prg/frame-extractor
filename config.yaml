@@ -4,6 +4,8 @@
 
 videos_dir: "videos"
 
+urls_file: "urls.txt"
+
 output_dir: "dataset/images"
 
 metadata_file: "dataset/metadata.csv"

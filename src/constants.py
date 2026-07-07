@@ -27,6 +27,8 @@ DEFAULT_CONFIG_FILE: Path = Path("config.yaml")
 
 DEFAULT_VIDEOS_DIR: Path = Path("videos")
 
+DEFAULT_URLS_FILE: Path = Path("urls_file.txt")
+
 DEFAULT_OUTPUT_DIR: Path = Path("dataset/images")
 
 DEFAULT_METADATA_FILE: Path = Path(

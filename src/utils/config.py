@@ -19,6 +19,7 @@ import yaml
 from src.constants import (
     DEFAULT_CONFIG_FILE,
     DEFAULT_VIDEOS_DIR,
+    DEFAULT_URLS_FILE,
     DEFAULT_OUTPUT_DIR,
     DEFAULT_METADATA_FILE,
     DEFAULT_LOG_FILE,
@@ -51,6 +52,8 @@ class Config:
     """
 
     videos_dir: Path = DEFAULT_VIDEOS_DIR
+
+    urls_file: Path = DEFAULT_URLS_FILE
 
     output_dir: Path = DEFAULT_OUTPUT_DIR
 
@@ -118,6 +121,13 @@ class Config:
                 data.get(
                     "videos_dir",
                     DEFAULT_VIDEOS_DIR
+                )
+            ),
+
+            urls_file=Path(
+                data.get(
+                    "urls_file",
+                    DEFAULT_URLS_FILE
                 )
             ),
 
