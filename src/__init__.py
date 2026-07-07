@@ -21,7 +21,7 @@ License:
 
 __title__ = "frame-extractor"
 __description__ = "Automatic frame extraction tool for Computer Vision datasets."
-__version__ = "1.0.0"
+__version__ = "0.1.0"
 __author__ = "João Victor Nascimento Lima"
 __license__ = "MIT"
 
