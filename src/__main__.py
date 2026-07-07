@@ -16,7 +16,7 @@ import sys
 from pathlib import Path
 
 from src import __version__
-from src.core.extractor import FrameExtractor
+from src.core.pipeline import DatasetPipeline
 from src.utils.config import Config
 from src.utils.logger import setup_logger
 
@@ -28,16 +28,21 @@ def build_parser() -> argparse.ArgumentParser:
 
     parser = argparse.ArgumentParser(
         prog="frame-extractor",
-        description="Automatic frame extraction tool for Computer Vision datasets.",
+        description=(
+            "Automatic video dataset generation "
+            "and frame extraction tool."
+        ),
     )
+
 
     parser.add_argument(
         "-c",
         "--config",
         type=Path,
         default=Path("config.yaml"),
-        help="Path to the configuration YAML file.",
+        help="Path to configuration YAML file.",
     )
+
 
     parser.add_argument(
         "--version",
@@ -45,46 +50,71 @@ def build_parser() -> argparse.ArgumentParser:
         version=f"%(prog)s {__version__}",
     )
 
+
     return parser
+
 
 
 def main() -> int:
     """
     Application entry point.
-
-    Returns
-    -------
-    int
-        Exit status code.
     """
 
     parser = build_parser()
     args = parser.parse_args()
 
-    try:
-        config = Config.load(args.config)
 
-        logger = setup_logger(config)
+    try:
+        config = Config.load(
+            args.config
+        )
+
+
+        logger = setup_logger(
+            config
+        )
+
 
         logger.info("=" * 60)
         logger.info("Frame Extractor")
         logger.info("Version: %s", __version__)
         logger.info("=" * 60)
 
-        extractor = FrameExtractor(config, logger)
-        extractor.run()
 
-        logger.info("Extraction completed successfully.")
+        pipeline = DatasetPipeline(
+            config,
+            logger
+        )
+
+
+        pipeline.run()
+
+
+        logger.info(
+            "Execution completed successfully."
+        )
+
 
         return 0
 
+
     except KeyboardInterrupt:
-        print("\nInterrupted by user.")
+
+        print(
+            "\nInterrupted by user."
+        )
+
         return 130
 
+
     except Exception as exc:
-        print(f"\nFatal error: {exc}")
+
+        print(
+            f"\nFatal error: {exc}"
+        )
+
         return 1
+
 
 
 if __name__ == "__main__":
