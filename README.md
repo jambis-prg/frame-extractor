@@ -345,9 +345,9 @@ If this project contributes to your research, please consider citing it.
 ```bibtex
 @software{frameextractor,
   title={Frame Extractor},
-  author={Your Name},
+  author={João Victor Nascimento Lima},
   year={2026},
-  url={https://github.com/your-user/frame-extractor}
+  url={https://github.com/jambis-prg/frame-extractor}
 }
 ```
 
